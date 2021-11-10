@@ -9,10 +9,10 @@ const Todo = ({ id, title, detail, date }) => {
     const { selectedId, setSelectedId } = useContext(TodoContext);
     const [deleteTodo] = useMutation(DELETE_TODO);
 
-    const removeTodo = (id) => {
+    const removeTodo = (rmId) => {
         deleteTodo({
             variables: {
-                id: id
+                id: rmId
             }, refetchQueries: [{ query: GET_TODOS }]
         })
     }
